@@ -19,18 +19,20 @@ public class UsuarioDAO {
   private static final String ELIMINAR_USUARIO = "DELETE FROM usuarios WHERE cedula = ?";
   private static final String ACTUALIZAR_USUARIO = "UPDATE usuarios SET nombre = ?, ciudad = ?, email = ?, contraseña_encriptada = ? WHERE cedula = ?";
 
-  private static final String FILTRAR_CUENTA = "SELECT * FROM usuarios WHERE consecutivo = ?";
-
   // Conexión a la base de datos
-  protected Connection getConnection() {
+  protected Connection getConnection(){
     Connection conexion = null;
-    System.out.println("Conectando a la base de datos...");
     try {
+      Class.forName("org.mariadb.jdbc.Driver");
+      System.out.println("Conectando a la base de datos...");
       // Le pasamos la URL de la base de datos, el usuario y la contraseña para conectarnos a la base de datos
       conexion = DriverManager.getConnection(URL_DB, USER_DB, PASSWORD_DB);
       System.out.println(conexion);
+    } catch (ClassNotFoundException e) {
+      System.out.println("Error: MariaDB JDBC Driver no encontrado.");
     } catch (SQLException e) {
       System.out.println("Error al conectar a la base de datos: " + e.getMessage());
+      e.printStackTrace();
     }
     return conexion;
   }
