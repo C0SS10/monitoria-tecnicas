@@ -35,7 +35,7 @@ public class RegistroServlet extends HttpServlet {
         usuarioDAO.insertarUsuario(nuevoUsuario);
 
         // Redireccionamos a la página de registro exitoso
-        response.sendRedirect("registro_exitoso.jsp");
+        response.sendRedirect("registro-exitoso.jsp");
     }
 
     private String encriptarContraseña(String contraseña) {
