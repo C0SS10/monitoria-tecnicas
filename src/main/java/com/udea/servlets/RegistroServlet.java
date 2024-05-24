@@ -25,7 +25,7 @@ public class RegistroServlet extends HttpServlet {
         String nombre = request.getParameter("nombre");
         int cedula = Integer.parseInt(request.getParameter("cedula"));
         String ciudad = request.getParameter("ciudad");
-        String contraseña = request.getParameter("contraseña"); // Deberías encriptar la contraseña aquí
+        String contraseña = request.getParameter("contraseña");
         String email = request.getParameter("email");
 
         // Se encripta la contraseña utilizando la libreria 'jBCrypt'
