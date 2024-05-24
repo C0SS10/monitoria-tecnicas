@@ -50,7 +50,7 @@ mvn clean install
 - **long**: El tipo de datos del campo es long, que es un tipo de datos primitivo en Java que representa un valor numérico de 64 bits.
 
 > [!WARNING]
-> Se tienes problemas con la versión de la dependencia `jstl` te recomiendo esta solución en [StackOverflow](https://stackoverflow.com/questions/4928271 how-to-install-jstl-it-fails-with-the-absolute-uri-cannot-be-resolved-or-una) 
+> Se tienes problemas con la versión de la dependencia `jstl` te recomiendo esta solución en [StackOverflow](https://stackoverflow.com/questions/4928271) 
 
 ## **Querys SQL** 📜
 Las consultas SQL se usan para comunicar el back con la base de datos. Para ello te recomiendo revisar el archivo [UsuarioDAO](../tecnicas/src/main/java/com/udea/dao/UsuarioDAO.java) y te fijes en las variables de tipo `private static final String`
