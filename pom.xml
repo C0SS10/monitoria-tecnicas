@@ -37,6 +37,7 @@
       <scope>provided</scope>
     </dependency>
 
+    <!-- Estas tres dependencias son para utilizar etiquetas personalizables en el .jsp -->
     <dependency>
       <groupId>jakarta.servlet.jsp.jstl</groupId>
       <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
@@ -54,6 +55,7 @@
       <artifactId>jakarta.el-api</artifactId>
       <version>6.0.0</version>
     </dependency>
+    <!--  -->
 
     <dependency>
       <groupId>org.mindrot</groupId>

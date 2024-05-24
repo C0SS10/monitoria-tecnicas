@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <html>
+  <meta>
   <body>
     <h2>Fruteria Cofio 🍏</h2>
     <div class="contenedor-botones">

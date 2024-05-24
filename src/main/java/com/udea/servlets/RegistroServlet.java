@@ -21,6 +21,7 @@ public class RegistroServlet extends HttpServlet {
         this.usuarioDAO = new UsuarioDAO();
     }
 
+    //GET , UPDATE, POST, DELETE son métodos HTTP
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nombre = request.getParameter("nombre");
         int cedula = Integer.parseInt(request.getParameter("cedula"));

@@ -26,6 +26,7 @@ public class UsuarioDAO {
   protected Connection getConnection() {
     Connection conexion = null;
     try {
+      //Importante esta línea para que el driver sepa que se va a conectar a una base de datos MariaDB
       Class.forName("org.mariadb.jdbc.Driver");
       System.out.println("Conectando a la base de datos...");
       // Le pasamos la URL de la base de datos, el usuario y la contraseña para
