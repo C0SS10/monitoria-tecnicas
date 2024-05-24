@@ -37,13 +37,13 @@
       <scope>provided</scope>
     </dependency>
 
-    <!-- Estas tres dependencias son para utilizar etiquetas personalizables en el .jsp -->
+    <!-- Estas dependencias son para utilizar etiquetas personalizables en el archivo .jsp -->
     <dependency>
       <groupId>jakarta.servlet.jsp.jstl</groupId>
       <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
       <version>3.0.0</version>
     </dependency>
-    
+
     <dependency>
       <groupId>org.glassfish.web</groupId>
       <artifactId>jakarta.servlet.jsp.jstl</artifactId>
@@ -54,13 +54,6 @@
       <groupId>jakarta.el</groupId>
       <artifactId>jakarta.el-api</artifactId>
       <version>6.0.0</version>
-    </dependency>
-    <!--  -->
-
-    <dependency>
-      <groupId>org.mindrot</groupId>
-      <artifactId>jbcrypt</artifactId>
-      <version>0.4</version>
     </dependency>
 
     <dependency>
@@ -73,6 +66,14 @@
       <groupId>taglibs</groupId>
       <artifactId>standard</artifactId>
       <version>1.1.2</version>
+    </dependency>
+    <!--  -->
+
+    <!-- Librería/Paquete para encriptar contraseñas -->
+    <dependency>
+      <groupId>org.mindrot</groupId>
+      <artifactId>jbcrypt</artifactId>
+      <version>0.4</version>
     </dependency>
 
   </dependencies>
