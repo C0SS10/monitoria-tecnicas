@@ -3,7 +3,10 @@ package com.udea.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.udea.model.Usuario;
 
@@ -20,12 +23,13 @@ public class UsuarioDAO {
   private static final String ACTUALIZAR_USUARIO = "UPDATE usuarios SET nombre = ?, ciudad = ?, email = ?, contraseña_encriptada = ? WHERE cedula = ?";
 
   // Conexión a la base de datos
-  protected Connection getConnection(){
+  protected Connection getConnection() {
     Connection conexion = null;
     try {
       Class.forName("org.mariadb.jdbc.Driver");
       System.out.println("Conectando a la base de datos...");
-      // Le pasamos la URL de la base de datos, el usuario y la contraseña para conectarnos a la base de datos
+      // Le pasamos la URL de la base de datos, el usuario y la contraseña para
+      // conectarnos a la base de datos
       conexion = DriverManager.getConnection(URL_DB, USER_DB, PASSWORD_DB);
       System.out.println(conexion);
     } catch (ClassNotFoundException e) {
@@ -38,19 +42,61 @@ public class UsuarioDAO {
   }
 
   // Crear un usuario
-  public void insertarUsuario(Usuario nuevoUsuario){
-    try(
-      Connection conexion = getConnection(); 
-      PreparedStatement preparedStatement = conexion.prepareStatement(INSERTAR_USUARIO)
-    ){
+  public void insertarUsuario(Usuario nuevoUsuario) {
+    try (
+        Connection conexion = getConnection();
+        PreparedStatement preparedStatement = conexion.prepareStatement(INSERTAR_USUARIO)) {
       preparedStatement.setString(1, nuevoUsuario.getNombre());
       preparedStatement.setInt(2, nuevoUsuario.getCedula());
       preparedStatement.setString(3, nuevoUsuario.getCiudad());
       preparedStatement.setString(4, nuevoUsuario.getContraseña_encriptada());
       preparedStatement.setString(5, nuevoUsuario.getEmail());
       preparedStatement.executeUpdate();
-    } catch(SQLException e){
+    } catch (SQLException e) {
       System.out.println("Error al insertar un usuario: " + e.getMessage());
     }
+  }
+
+  // Se retorna un solo usuario por eso Usuario que es el objeto/modelo que se va a retornar
+  public Usuario seleccionarUsuarioPorCedula(int cedula) {
+    Usuario usuario = null;
+    try (Connection conexion = getConnection();
+        PreparedStatement preparedStatement = conexion.prepareStatement(SELECCIONAR_USUARIO_CEDULA)) {
+      preparedStatement.setInt(1, cedula);
+      ResultSet resultSet = preparedStatement.executeQuery();
+      if (resultSet.next()) {
+        usuario = new Usuario();
+        usuario.setNombre(resultSet.getString("nombre"));
+        usuario.setCedula(resultSet.getInt("cedula"));
+        usuario.setCiudad(resultSet.getString("ciudad"));
+        usuario.setContraseña_encriptada(resultSet.getString("contraseña_encriptada"));
+        usuario.setEmail(resultSet.getString("email"));
+      }
+    } catch (SQLException e) {
+      System.out.println("Error al seleccionar un usuario por cédula: " + e.getMessage());
+    }
+    return usuario;
+  }
+
+  // Se va a retornar una lista de usuarios por eso List<Usuario>
+  public List<Usuario> seleccionarTodosUsuarios() {
+    // Creando una nueva lista de usuarios
+    List<Usuario> usuarios = new ArrayList<>();
+    try (Connection conexion = getConnection();
+        PreparedStatement preparedStatement = conexion.prepareStatement(SELECCIONAR_TODOS)) {
+      ResultSet resultSet = preparedStatement.executeQuery();
+      while (resultSet.next()) {
+        Usuario usuario = new Usuario();
+        usuario.setNombre(resultSet.getString("nombre"));
+        usuario.setCedula(resultSet.getInt("cedula"));
+        usuario.setCiudad(resultSet.getString("ciudad"));
+        usuario.setContraseña_encriptada(resultSet.getString("contraseña_encriptada"));
+        usuario.setEmail(resultSet.getString("email"));
+        usuarios.add(usuario);
+      }
+    } catch (SQLException e) {
+      System.out.println("Error al seleccionar todos los usuarios: " + e.getMessage());
+    }
+    return usuarios;
   }
 }
