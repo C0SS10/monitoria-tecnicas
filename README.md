@@ -49,6 +49,9 @@ mvn clean install
 - **final**: El valor del campo no puede cambiar una vez que ha sido asignado.
 - **long**: El tipo de datos del campo es long, que es un tipo de datos primitivo en Java que representa un valor numérico de 64 bits.
 
+> [!WARNING]
+> Se tienes problemas con la versión de la dependencia `jstl` te recomiendo esta solución en [StackOverflow](https://stackoverflow.com/questions/4928271 how-to-install-jstl-it-fails-with-the-absolute-uri-cannot-be-resolved-or-una) 
+
 ## **Querys SQL** 📜
 Las consultas SQL se usan para comunicar el back con la base de datos. Para ello te recomiendo revisar el archivo [UsuarioDAO](../tecnicas/src/main/java/com/udea/dao/UsuarioDAO.java) y te fijes en las variables de tipo `private static final String`
 
@@ -114,10 +117,3 @@ FROM cliente cl
 INNER JOIN cuenta cu ON cl.cedula = cu.id_cliente
 WHERE cl.cedula = 1;
 ```
-
-https://stackoverflow.com/questions/4928271 how-to-install-jstl-it-fails-with-the-absolute-uri-cannot-be-resolved-or-una
-
-// Método para verificar la contraseña
-public boolean verificarContraseña(String contraseña, String hashAlmacenado) {
-    return BCrypt.checkpw(contraseña, hashAlmacenado);
-}
