@@ -21,6 +21,9 @@ public class Usuario {
     this.contraseña_encriptada = contraseña_encriptada;
     this.email = email;
   }
+  
+  public Usuario() {
+  }
 
   public String getNombre() {
     return nombre;
