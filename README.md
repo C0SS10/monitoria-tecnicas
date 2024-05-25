@@ -76,7 +76,7 @@ CREATE TABLE cuenta (
 ### Insertar registros en las tablas 📥
 ```sql
 INSERT INTO cliente (cedula, nombre, apellido, email) 
-VALUES (1020, 'Juan', 'Pérez', 'juan.perez@example.com');
+VALUES (1020, 'Esteban', 'Cossio', 'estebancossio@udea.com');
 
 INSERT INTO cuenta (id_cuenta, id_cliente, saldo) 
 VALUES (1, 1020, 1000);
@@ -99,7 +99,7 @@ WHERE cl.cedula = 1;
 ### Actualizar datos 📝
 ```sql
 UPDATE cliente 
-SET email = 'juan.perez_updated@example.com', nombre = 'Esteban' 
+SET email = 'estebancossio_updated@udea.com', nombre = 'Carlos' 
 WHERE cedula = 1;
 ```
 
