@@ -50,7 +50,7 @@ mvn clean install
 - **long**: El tipo de datos del campo es long, que es un tipo de datos primitivo en Java que representa un valor numérico de 64 bits.
 
 > [!WARNING]
-> Se tienes problemas con la versión de la dependencia `jstl` te recomiendo esta solución en [StackOverflow](https://stackoverflow.com/questions/4928271) 
+> Si tienes problemas con la versión de la dependencia `jstl` te recomiendo esta solución en [StackOverflow](https://stackoverflow.com/questions/4928271) 
 
 ## **Querys SQL** 📜
 Las consultas SQL se usan para comunicar el back con la base de datos. Para ello te recomiendo revisar el archivo [UsuarioDAO](/src/main/java/com/udea/dao/UsuarioDAO.java) y te fijes en las variables de tipo `private static final String`
@@ -75,11 +75,11 @@ CREATE TABLE cuenta (
 
 ### Insertar registros en las tablas 📥
 ```sql
-INSERT INTO cliente (cedula, nombre, apellido, email, telefono) 
-VALUES (1, 'Juan', 'Pérez', 'juan.perez@example.com', '555-1234');
+INSERT INTO cliente (cedula, nombre, apellido, email) 
+VALUES (1020, 'Juan', 'Pérez', 'juan.perez@example.com');
 
-INSERT INTO cuenta (id_cuenta, id_cliente, numero_cuenta, saldo, fecha_creacion) 
-VALUES (1, 1, '1234567890', 1000.00, '2024-01-01');
+INSERT INTO cuenta (id_cuenta, id_cliente, saldo) 
+VALUES (1, 1020, 1000);
 ```
 
 ### Seleccionar datos de las tablas 🫳
