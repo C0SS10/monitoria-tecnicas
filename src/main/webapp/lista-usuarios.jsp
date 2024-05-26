@@ -32,6 +32,12 @@ prefix="c" uri="jakarta.tags.core" %>
       <input type="number" name="cedula" placeholder="Cédula" />
       <input type="submit" value="Buscar" class="button" />
     </form>
+
+    <!-- Si quiero eliminar un usuario por su cédula 'action=eliminar-usuario' me envia a la ruta de /eliminar-usuario y por tanto debería de tener un servlet encargado de esa ruta -->
+    <!-- <form action="eliminar-usuario" method="post">
+      <input type="number" name="cedula" placeholder="Cédula" />
+      <input type="submit" value="Eliminar" class="button" />
+    </form> -->
   </body>
 
   <style>

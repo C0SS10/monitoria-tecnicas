@@ -32,6 +32,8 @@ public class ObtenerServlet extends HttpServlet {
     } else {
       List<Usuario> usuarios = usuarioDAO.seleccionarTodosUsuarios();
       // Pasar la lista de usuarios al archivo JSP
+      System.out.println(usuarios);
+      System.out.println("\n\n xxxxxxxxxxxxxx \n\n");
       request.setAttribute("usuarios", usuarios);
     }
 
