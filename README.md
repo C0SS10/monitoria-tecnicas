@@ -120,3 +120,6 @@ FROM cliente cl
 INNER JOIN cuenta cu ON cl.cedula = cu.id_cliente
 WHERE cl.cedula = 1;
 ```
+
+> [!NOTE]
+> Si quieres profundizar en consultas SQL, te recomiendo esta [tabla de querys](https://learnsql.com/blog/sql-basics-cheat-sheet/sql-basics-cheat-sheet-a3.pdf)
