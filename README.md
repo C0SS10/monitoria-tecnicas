@@ -1,3 +1,28 @@
+## **Estructura del proyecto** 📁
+```css
+nombre-proyecto/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/
+│       │       └── udea/
+│       │           ├── dao/
+│       │           │   └── UsuarioDAO.java
+│       │           ├── model/
+│       │           │   └── Usuario.java
+│       │           ├── servlets/
+│       │           │   └── PruebaServlet.java
+│       │           └── utils/
+│       │               └── ClaseUtil.java
+│       └── webapp/
+│           ├── WEB-INF/
+│           └── index.jsp
+├── target/
+├── .gitignore
+├── pom.xml
+└── README.md
+```
+
 ## **Compilación del proyecto** 📦
 Para compilar el proyecto usando maven, debes seguir los siguientes pasos:
 
