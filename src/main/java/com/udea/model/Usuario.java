@@ -25,7 +25,7 @@ public class Usuario implements Serializable {
     this.contraseña_encriptada = contraseña_encriptada;
     this.email = email;
   }
-  
+
   public Usuario() {
   }
 
@@ -69,4 +69,8 @@ public class Usuario implements Serializable {
     this.email = email;
   }
 
+  @Override
+  public String toString() {
+    return "Usuario: { cedula=" + cedula + ", ciudad=" + ciudad + ", contraseña_encriptada=" + contraseña_encriptada + ", email=" + email + ", nombre=" + nombre + " }";
+  }
 }
