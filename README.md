@@ -33,11 +33,14 @@ mvn clean install
 - Download server? `Yes`
 - Buscar el servidor de Tomcat en la versión que quieras utilizar, te recomienda la versión `10.1.X`
 - Aceptas las licencias y se habrá descargador el servidor
-- Luego, compilas el proyecto usando los comandos de maven. Se creará una carpeta con nombre `target`
-- Dentro habrá un archivo con extensión `.war`
-- Click derecho en ese archivo y luego en `Run on Server`.
-- Eliges el servidor de tomcat que descargaste y luego das click en `No`.
-- Una vez hecho esto, puedes ingresar desde el navegar a la URL `localhost:8080/X` donde 'X' es el nombre de tu proyecto.
+1. Luego, compilas el proyecto usando los comandos de maven. Se creará una carpeta con nombre `target`
+2. Dentro habrá un archivo con extensión `.war`
+3. Click derecho en ese archivo y luego en `Run on Server`.
+4. Eliges el servidor de tomcat que descargaste y luego das click en `No`.
+5. Una vez hecho esto, puedes ingresar desde el navegar a la URL `localhost:8080/X` donde 'X' es el nombre de tu proyecto.
+
+> [!IMPORTANT]
+> Debes reproducir los pasos 1 al 5, cada vez que haces un cambio en la lógica del front o back para que se vea reflejado.
 
 ### **En NetBeans** 🧊
 - Solo necesitar ejecutar tu proyecto apretando F5 o dandole al bóton de play '▶️'  en la barra de menús. 
