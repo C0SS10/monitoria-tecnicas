@@ -32,13 +32,13 @@ prefix="c" uri="jakarta.tags.core" %>
 
     <section class="opciones">
       <form action="lista-usuarios" method="get">
-        <input type="number" name="cedula" placeholder="Cédula" />
+        <input type="number" name="cedula" placeholder="Cédula" class="input-cajon"/>
         <input type="submit" value="Buscar" class="button" />
       </form>
 
       <!-- Si quiero eliminar un usuario por su cédula 'action=eliminar-usuario' me envia a la ruta de /eliminar-usuario y por tanto debería de tener un servlet encargado de esa ruta -->
       <form action="eliminar-usuario" method="post">
-        <input type="number" name="cedula" placeholder="Cédula" />
+        <input type="number" name="cedula" placeholder="Cédula" class="input-cajon"/>
         <input type="submit" value="Eliminar" class="button" />
       </form>
     </section>
@@ -104,16 +104,16 @@ prefix="c" uri="jakarta.tags.core" %>
       gap: 1rem;
     }
 
-    input:first-of-type {
+    .input-cajon {
       width: 150px;
-      height: 40px;
+      height: 25px;
       border-radius: 5px;
       border: 2px solid #000;
       background-color: #fff;
       box-shadow: 4px 4px #000000;
-      font-size: 15px;
+      font-size: 1rem;
       font-weight: 600;
-      color: #323232;
+      color: #2a2a2a;
       padding: 5px 10px;
       outline: none;
       text-align: center;
