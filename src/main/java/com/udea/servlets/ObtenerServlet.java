@@ -34,8 +34,6 @@ public class ObtenerServlet extends HttpServlet {
 
       // Imprimir en consola la lista de usuarios, utiliza método toString() implicitamente.
       System.out.println(usuarios);
-      System.out.println("\n\n xxxxxxxxxxxxxx \n\n");
-
       // Pasar la lista de usuarios al archivo JSP
       request.setAttribute("usuarios", usuarios);
     }
