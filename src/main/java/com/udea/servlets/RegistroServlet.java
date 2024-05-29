@@ -8,7 +8,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -21,8 +20,9 @@ public class RegistroServlet extends HttpServlet {
         this.usuarioDAO = new UsuarioDAO();
     }
 
-    //GET , UPDATE, POST, DELETE son métodos HTTP
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    // GET , UPDATE, POST, DELETE son métodos HTTP
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         String nombre = request.getParameter("nombre");
         int cedula = Integer.parseInt(request.getParameter("cedula"));
         String ciudad = request.getParameter("ciudad");
@@ -34,6 +34,9 @@ public class RegistroServlet extends HttpServlet {
 
         Usuario nuevoUsuario = new Usuario(nombre, cedula, ciudad, contraseñaEncriptada, email);
         usuarioDAO.insertarUsuario(nuevoUsuario);
+
+        request.getSession().setAttribute("nombre", nombre);
+        request.getSession().setAttribute("email", email);
 
         // Redireccionamos a la página de registro exitoso
         response.sendRedirect("registro-exitoso.jsp");
