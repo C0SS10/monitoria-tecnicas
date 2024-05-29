@@ -103,4 +103,15 @@ public class UsuarioDAO {
     }
     return usuarios;
   }
+
+  // Eliminar un usuario por cédula
+  public void eliminarUsuarioPorCedula(int cedula) {
+    try (Connection conexion = getConnection();
+        PreparedStatement preparedStatement = conexion.prepareStatement(ELIMINAR_USUARIO)) {
+      preparedStatement.setInt(1, cedula);
+      preparedStatement.executeUpdate();
+    } catch (SQLException e) {
+      System.out.println("Error al eliminar un usuario por cédula: " + e.getMessage());
+    }
+  }
 }

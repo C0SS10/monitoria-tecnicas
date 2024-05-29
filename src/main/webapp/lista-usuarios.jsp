@@ -24,6 +24,17 @@ prefix="c" uri="jakarta.tags.core" %>
               <td><c:out value="${usuario.cedula}" /></td>
               <td><c:out value="${usuario.ciudad}" /></td>
               <td><c:out value="${usuario.email}" /></td>
+              <td>
+                <!-- Si quiero eliminar un usuario por su cédula 'action=eliminar-usuario' me envia a la ruta de /eliminar-usuario y por tanto debería de tener un servlet encargado de esa ruta -->
+                <form action="eliminar-usuario" method="post">
+                  <input
+                    type="hidden"
+                    name="cedula"
+                    value="${usuario.cedula}"
+                  />
+                  <input type="submit" value="Eliminar" />
+                </form>
+              </td>
             </tr>
           </c:forEach>
         </tbody>
@@ -32,14 +43,18 @@ prefix="c" uri="jakarta.tags.core" %>
 
     <section class="opciones">
       <form action="lista-usuarios" method="get">
-        <input type="number" name="cedula" placeholder="Cédula" class="input-cajon"/>
+        <input
+          type="number"
+          name="cedula"
+          placeholder="Cédula"
+          class="input-cajon"
+        />
         <input type="submit" value="Buscar" class="button" />
       </form>
 
-      <!-- Si quiero eliminar un usuario por su cédula 'action=eliminar-usuario' me envia a la ruta de /eliminar-usuario y por tanto debería de tener un servlet encargado de esa ruta -->
-      <form action="eliminar-usuario" method="post">
-        <input type="number" name="cedula" placeholder="Cédula" class="input-cajon"/>
-        <input type="submit" value="Eliminar" class="button" />
+      <form action="lista-usuarios" method="get">
+        <input type="hidden" name="orden" value="alfabetico" />
+        <input type="submit" value="Ordenar Alfabéticamente" class="button" />
       </form>
     </section>
   </body>
@@ -68,7 +83,7 @@ prefix="c" uri="jakarta.tags.core" %>
       justify-content: center;
     }
 
-    .opciones{
+    .opciones {
       margin-top: 2rem;
       display: flex;
       flex-direction: row;
