@@ -39,7 +39,7 @@ public class RegistroServlet extends HttpServlet {
         request.getSession().setAttribute("email", email);
 
         // Redireccionamos a la página de registro exitoso
-        response.sendRedirect("registro-exitoso.jsp");
+        response.sendRedirect("registro-exitoso");
     }
 
     private String encriptarContraseña(String contraseña) {
