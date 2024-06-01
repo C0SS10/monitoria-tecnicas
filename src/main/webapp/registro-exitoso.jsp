@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %> <%@ page
+import="jakarta.servlet.http.HttpSession" %>
 <html>
   <head>
     <title>Registro Exitoso</title>
@@ -16,7 +17,11 @@
   </head>
   <body>
     <h2>Registro Exitoso</h2>
-    <p>El usuario ha sido registrado exitosamente. ✅</p>
+    <% 
+      String nombre = (String) session.getAttribute("nombre");
+      String email = (String) session.getAttribute("email");
+    %>
+    <p>El usuario <%= nombre %> ha sido registrado exitosamente con el correo <%= email %>. ✅</p>
     <p>Serás redirigido a la página principal en unos momentos...</p>
   </body>
 
@@ -34,12 +39,12 @@
       font-size: 2rem;
     }
 
-    p:first-of-type{
+    p:first-of-type {
       font-size: 1.5rem;
       color: #4caf50;
     }
 
-    p{
+    p {
       font-size: 1.2rem;
       color: red;
       font-weight: 800;

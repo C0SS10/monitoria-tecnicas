@@ -9,29 +9,54 @@ prefix="c" uri="jakarta.tags.core" %>
   <body>
     <h1>Lista de Usuarios</h1>
 
-    <table border="1">
-      <tr>
-        <th>Nombre</th>
-        <th>Cédula</th>
-        <th>Ciudad</th>
-        <th>Email</th>
-      </tr>
-      <tbody>
-        <c:forEach items="${usuarios}" var="usuario">
-          <tr>
-            <td><c:out value="${usuario.nombre}" /></td>
-            <td><c:out value="${usuario.cedula}" /></td>
-            <td><c:out value="${usuario.ciudad}" /></td>
-            <td><c:out value="${usuario.email}" /></td>
-          </tr>
-        </c:forEach>
-      </tbody>
-    </table>
+    <section>
+      <table border="1">
+        <tr>
+          <th>Nombre</th>
+          <th>Cédula</th>
+          <th>Ciudad</th>
+          <th>Email</th>
+        </tr>
+        <tbody>
+          <c:forEach items="${usuarios}" var="usuario">
+            <tr>
+              <td><c:out value="${usuario.nombre}" /></td>
+              <td><c:out value="${usuario.cedula}" /></td>
+              <td><c:out value="${usuario.ciudad}" /></td>
+              <td><c:out value="${usuario.email}" /></td>
+              <td>
+                <!-- Si quiero eliminar un usuario por su cédula 'action=eliminar-usuario' me envia a la ruta de /eliminar-usuario y por tanto debería de tener un servlet encargado de esa ruta -->
+                <form action="eliminar-usuario" method="post">
+                  <input
+                    type="hidden"
+                    name="cedula"
+                    value="${usuario.cedula}"
+                  />
+                  <input type="submit" value="Eliminar" />
+                </form>
+              </td>
+            </tr>
+          </c:forEach>
+        </tbody>
+      </table>
+    </section>
 
-    <form action="lista-usuarios" method="get">
-      <input type="number" name="cedula" placeholder="Cédula" />
-      <input type="submit" value="Buscar" class="button" />
-    </form>
+    <section class="opciones">
+      <form action="lista-usuarios" method="get">
+        <input
+          type="number"
+          name="cedula"
+          placeholder="Cédula"
+          class="input-cajon"
+        />
+        <input type="submit" value="Buscar" class="button" />
+      </form>
+
+      <form action="lista-usuarios" method="get">
+        <input type="hidden" name="orden" value="alfabetico" />
+        <input type="submit" value="Ordenar Alfabéticamente" class="button" />
+      </form>
+    </section>
   </body>
 
   <style>
@@ -51,30 +76,39 @@ prefix="c" uri="jakarta.tags.core" %>
       color: #8c8c8c;
     }
 
-    table {
-      border-collapse: collapse;
-      width: 100%;
+    section:first-of-type {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
-    th{
+    .opciones {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: row;
+      gap: 4.5rem;
+      justify-content: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 60%;
+    }
+
+    th {
       border: 1px solid #dddddd;
       padding: 8px;
       text-align: center;
       font-size: 1.5rem;
-    }
-
-    td{
-      font-size: 2rem;
-      font-weight: 600;
-    }
-
-    th {
       background-color: #4caf50;
       color: white;
       border: none;
     }
 
     td {
+      font-size: 1.2rem;
+      font-weight: 600;
       color: #8c8c8c;
     }
 
@@ -85,16 +119,16 @@ prefix="c" uri="jakarta.tags.core" %>
       gap: 1rem;
     }
 
-    input:first-of-type {
+    .input-cajon {
       width: 150px;
-      height: 40px;
+      height: 25px;
       border-radius: 5px;
       border: 2px solid #000;
       background-color: #fff;
       box-shadow: 4px 4px #000000;
-      font-size: 15px;
+      font-size: 1rem;
       font-weight: 600;
-      color: #323232;
+      color: #2a2a2a;
       padding: 5px 10px;
       outline: none;
       text-align: center;

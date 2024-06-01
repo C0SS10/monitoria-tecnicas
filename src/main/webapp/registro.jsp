@@ -6,7 +6,7 @@
   <body>
     <h2>Registro de Usuario</h2>
     <div>
-      <!-- Esta kínea especifica que cuando el formulario se envíe, es decir, cuando el usuario de click en el input/botón 'registrar' los datos se enviarán a la URL localhost:8080/tecnicas/registro -->
+      <!-- Esta línea especifica que cuando el formulario se envíe, es decir, cuando el usuario de click en el input/botón 'registrar' los datos se enviarán a la URL localhost:8080/tecnicas/registro -->
       <form action="registro" method="post">
         <input
           type="text"

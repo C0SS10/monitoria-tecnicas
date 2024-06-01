@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <html>
-  <meta>
   <body>
     <h2>Fruteria Cofio 🍏</h2>
     <div class="contenedor-botones">
@@ -9,6 +8,12 @@
       </a>
       <a href="lista-usuarios">
         <button>Mostrar</button>
+      </a>
+      <a href="asignar-cuenta.jsp">
+        <button>Asignar Cuenta</button>
+      </a>
+      <a href="transferir-dinero.jsp">
+        <button>Transferir</button>
       </a>
     </div>
   </body>

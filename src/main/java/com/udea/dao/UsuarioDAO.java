@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.udea.model.Usuario;
+import com.udea.utils.ConexionBD;
 
 public class UsuarioDAO {
   private String URL_DB = "jdbc:mariadb://localhost:3306/tecnicas";
@@ -21,6 +22,8 @@ public class UsuarioDAO {
   private static final String SELECCIONAR_TODOS = "SELECT * FROM usuarios";
   private static final String ELIMINAR_USUARIO = "DELETE FROM usuarios WHERE cedula = ?";
   private static final String ACTUALIZAR_USUARIO = "UPDATE usuarios SET nombre = ?, ciudad = ?, email = ?, contraseña_encriptada = ? WHERE cedula = ?";
+
+  Connection c = ConexionBD.getConnection(); // Reutilizando código para la conexión a la base de datos
 
   // Conexión a la base de datos
   protected Connection getConnection() {
@@ -99,5 +102,16 @@ public class UsuarioDAO {
       System.out.println("Error al seleccionar todos los usuarios: " + e.getMessage());
     }
     return usuarios;
+  }
+
+  // Eliminar un usuario por cédula
+  public void eliminarUsuarioPorCedula(int cedula) {
+    try (Connection conexion = getConnection();
+        PreparedStatement preparedStatement = conexion.prepareStatement(ELIMINAR_USUARIO)) {
+      preparedStatement.setInt(1, cedula);
+      preparedStatement.executeUpdate();
+    } catch (SQLException e) {
+      System.out.println("Error al eliminar un usuario por cédula: " + e.getMessage());
+    }
   }
 }

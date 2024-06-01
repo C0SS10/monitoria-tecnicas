@@ -1,7 +1,9 @@
 package com.udea.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import jakarta.servlet.ServletException;
@@ -22,6 +24,10 @@ public class ObtenerServlet extends HttpServlet {
     UsuarioDAO usuarioDAO = new UsuarioDAO();
     String cedulaParametro = request.getParameter("cedula");
 
+    String orden = request.getParameter("orden");
+
+    List<Usuario> usuarios = new ArrayList<>();
+
     if (cedulaParametro != null && !cedulaParametro.isEmpty()) {
       // Si se proporcionó, mostrar solo el usuario con esa cédula
       int cedula = Integer.parseInt(cedulaParametro);
@@ -30,11 +36,21 @@ public class ObtenerServlet extends HttpServlet {
       // Pasar el usuario al archivo JSP
       request.setAttribute("usuarios", Collections.singletonList(usuario));
     } else {
-      List<Usuario> usuarios = usuarioDAO.seleccionarTodosUsuarios();
+      usuarios = usuarioDAO.seleccionarTodosUsuarios();
+
+      // Imprimir en consola la lista de usuarios, utiliza método toString()
+      // implicitamente.
+      System.out.println(usuarios);
       // Pasar la lista de usuarios al archivo JSP
+      request.setAttribute("usuarios", usuarios);
+    }
+
+    if ("alfabetico".equals(orden)) {
+      usuarios.sort(Comparator.comparing(Usuario::getNombre));
       request.setAttribute("usuarios", usuarios);
     }
 
     request.getRequestDispatcher("/lista-usuarios.jsp").forward(request, response);
   }
+  
 }

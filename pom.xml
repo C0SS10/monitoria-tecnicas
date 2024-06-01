@@ -79,7 +79,8 @@
   </dependencies>
 
   <build>
-    <finalName>tecnicas</finalName>
+    <!-- Puedes editar el nombre con el que se crea de tu archivo .war aquí en finalName-->
+    <finalName>aplicacion</finalName>
     <pluginManagement>
       <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
