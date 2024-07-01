@@ -12,7 +12,7 @@ Una empresa de bienes raíces necesita un sistema de gestión para sus propiedad
 ---
 
 ### Descripción | Ejercicio #2 📄
-Una frutería desea implementar un sistema de gestión para sus productos. Cada producto puede ser de diferentes tipos: frutas, verduras y legumbres. Cada tipo de producto tiene características específicas, pero todos deben poder calcular su tiempo de maduración y mostrar una descripción detallada.
+Una frutería desea implementar un sistema de gestión para sus productos. Cada producto puede ser de diferentes tipos: frutas, verduras y legumbres. Cada tipo de producto tiene características específicas, pero todos deben poder calcular su tiempo de maduración y enviar una caja del producto.
 
 ### Requerimientos 📝
 - Crear una clase base llamada Producto con los métodos `calcularTiempoMaduracion()` y `enviarProducto()`.
