@@ -53,7 +53,7 @@ FiltroPropiedad esBlanca = (p) -> {p.getColor().equals("Blanca")};
 
 // Mostrar y utilizar la lambda creada
 System.out.println("Propiedades con color Blanca: \n");
-propiedades.stream().filter((p) -> {esBlanca.test(p)}).forEach((p) -> {System.out.println(p)});
+propiedades.stream().filter(p -> esBlanca.test(p)).forEach(p -> System.out.println(p));
 ```
 
 #### **Métodos utilizados**
