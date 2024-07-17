@@ -6,12 +6,20 @@ Este proyecto muestra un ejemplo simple de cómo usar funciones lambda en Java p
 
 #### **¿Qué es una función lambda?** ☝️🤓
 
-Una función lambda es una manera concisa de representar una función anónima (una función sin nombre). Las lambdas permiten pasar comportamientos como parámetros a métodos de una forma compacta y legible.
+Una función lambda es una manera concisa de representar una función anónima (una función sin nombre). Las lambdas permiten pasar comportamientos como parámetros a métodos de una forma compacta y legible. Por ejemplo, en lugar de escribir una clase que implemente una interfaz con un solo método, puedes usar una lambda para lograr lo mismo en una línea.
 
 #### **¿Por qué utilizamos interfaces con una sola función?** 📗
 
 - En Java, una interfaz es una referencia que se utiliza para especificar un comportamiento que las clases **deben implementar**. Una interfaz puede tener métodos abstractos (sin cuerpo) **que las clases deben definir**.
-- Utilizamos interfaces funcionales para representar funciones lambda. **Una interfaz funcional** es una interfaz que contiene un único método abstracto.
+- Utilizamos interfaces funcionales para representar funciones lambda. **Una interfaz funcional** es una interfaz que contiene un único método abstracto. Se denotan utilizando `@FunctionalInterface` al principio del nombre de la interfaz
+
+```java
+// Ejemplo: Una interfaz funcional
+@FunctionalInterface
+public interface IFiltroPropiedad {
+  boolean filtrar(Propiedad p);
+}
+```
 
 **Ejemplo de interfaz funcional:**
 
@@ -34,18 +42,18 @@ public interface IFiltroPropiedad {
 ### Sintaxis de una función lambda ✏️
 
 ```java
-(parametros) -> expresión
+(parametros) -> {expresión}
 ```
 
 **Un ejemplo de una función lambda es el siguiente:**
 
 ```java
 // Ejemplo: Expresión lambda para comprobar si una propiedad es de color Blanca
-FiltroPropiedad esBlanca = p -> p.getColor().equals("Blanca");
+FiltroPropiedad esBlanca = (p) -> {p.getColor().equals("Blanca")};
 
 // Mostrar y utilizar la lambda creada
 System.out.println("Propiedades con color Blanca: \n");
-propiedades.stream().filter(p -> esBlanca.test(p)).forEach(p -> System.out.println(p));
+propiedades.stream().filter((p) -> {esBlanca.test(p)}).forEach((p) -> {System.out.println(p)});
 ```
 
 #### **Métodos utilizados**
