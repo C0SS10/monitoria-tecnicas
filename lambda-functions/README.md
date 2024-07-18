@@ -13,19 +13,13 @@ Una función lambda es una manera concisa de representar una función anónima (
 - En Java, una interfaz es una referencia que se utiliza para especificar un comportamiento que las clases **deben implementar**. Una interfaz puede tener métodos abstractos (sin cuerpo) **que las clases deben definir**.
 - Utilizamos interfaces funcionales para representar funciones lambda. **Una interfaz funcional** es una interfaz que contiene un único método abstracto. Se denotan utilizando `@FunctionalInterface` al principio del nombre de la interfaz
 
+**Ejemplo de interfaz funcional:**
+
 ```java
 // Ejemplo: Una interfaz funcional
 @FunctionalInterface
 public interface IFiltroPropiedad {
   boolean filtrar(Propiedad p);
-}
-```
-
-**Ejemplo de interfaz funcional:**
-
-```java
-public interface IFiltroPropiedad {
-    boolean filtrar(Propiedad p);
 }
 ```
 
