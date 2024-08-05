@@ -18,6 +18,7 @@ Este repositorio contiene materiales, ejemplos y ejercicios utilizados en las se
 
 **Recursos Adicionales 🗃️**
 
+- [Carpeta con recursos](https://drive.google.com/drive/folders/1lG-kR7oEd8IHGEX1UHT1fyYCoi77XZ-o?usp=drive_link)
 - [Adecuar ambiente de desarrollo](https://drive.google.com/file/d/1jJuqVwBQTUyh298gClD1_mxWcCuDJun5/view?usp=sharing)
 - [Presentación Git/GitHub](https://docs.google.com/presentation/d/1zF87RjD0TGeSQ9y9786xXiNH2AFSmJiT/edit?usp=sharing&ouid=108535811048265839670&rtpof=true&sd=true)
 - [Aprendiendo Git](https://drive.google.com/file/d/1muB3dDxP13YZTCE1lOR6tm79h2fiQrBf/view?usp=sharing)
