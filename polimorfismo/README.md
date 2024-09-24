@@ -68,14 +68,14 @@ class Cuadrado {
 
 ### Descripción | Ejercicio #1 📄
 
-Una empresa de bienes raíces necesita un sistema de gestión para sus propiedades. Cada propiedad puede ser de diferentes tipos: departamentos, casas y locales comerciales. Cada tipo de propiedad tiene características específicas, pero todas deben poder calcular su precio de alquiler mensual y mostrar una descripción detallada.
+Una empresa necesita desarrollar un sistema para procesar facturas y realizar pagos utilizando diferentes métodos. El sistema debe permitir que las facturas se calculen de manera flexible y que los pagos se realicen a través de distintos métodos como tarjeta de débito, tarjeta de crédito, PayPal, entre otros medios de pago.
 
 ### Requerimientos 📝
 
-- Crear una clase base llamada Propiedad con los métodos `calcularPrecioAlquiler()` y `mostrarDescripcion()`.
-- Crear clases derivadas **Departamento**, **Casa** y **LocalComercial** que hereden de Propiedad.
-- Cada clase derivada debe sobrescribir los métodos `calcularPrecioAlquiler()` y `mostrarDescripcion()` para proporcionar una implementación específica.
-- Implementar una función que recorra la lista y muestre la descripción y el precio de alquiler de cada propiedad usando el **polimorfismo**.
+- Factura: Las facturas pueden tener diferentes tipos, como facturas con impuestos o facturas con descuento. Todas deben poder calcular su monto total.
+- Métodos de pago: El sistema debe soportar varios métodos de pago. Cada uno debe tener su propia implementación para realizar pagos.
+- Polimorfismo: El sistema debe ser lo suficientemente flexible para manejar los diferentes tipos de pago, utilizando polimorfismo para seleccionar el método de pago adecuado según el contexto.
+- Extensibilidad: Debe ser fácil agregar nuevos tipos de facturas o métodos de pago sin modificar la lógica existente.
 
 ---
 
