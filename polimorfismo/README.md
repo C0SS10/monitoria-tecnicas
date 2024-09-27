@@ -72,13 +72,15 @@ Una empresa necesita desarrollar un sistema para procesar facturas y realizar pa
 
 ### Requerimientos 📝
 
-- Factura: Las facturas pueden tener diferentes tipos, como facturas con impuestos o facturas con descuento. Todas deben poder calcular su monto total.
-- Métodos de pago: El sistema debe soportar varios métodos de pago. Cada uno debe tener su propia implementación para realizar pagos.
-- Polimorfismo: El sistema debe ser lo suficientemente flexible para manejar los diferentes tipos de pago, utilizando polimorfismo para seleccionar el método de pago adecuado según el contexto.
-- Extensibilidad: Debe ser fácil agregar nuevos tipos de facturas o métodos de pago sin modificar la lógica existente.
+- **Factura**: Las facturas pueden tener diferentes tipos, como facturas con impuestos o facturas con descuento. Todas deben poder calcular su monto total.
+- **Métodos de pago**: El sistema debe soportar varios métodos de pago. Cada uno debe tener su propia implementación para realizar pagos.
+- **Polimorfismo**: El sistema debe ser lo suficientemente flexible para manejar los diferentes tipos de pago, utilizando polimorfismo para seleccionar el método de pago adecuado según el contexto.
+- **Extensibilidad**: Debe ser fácil agregar nuevos tipos de facturas o métodos de pago sin modificar la lógica existente.
 
 ---
+
 ### Descripción | Ejercicio #2 📄
+
 Una empresa de bienes raíces necesita un sistema de gestión para sus propiedades. Cada propiedad puede ser de diferentes tipos: departamentos, casas y locales comerciales. Cada tipo de propiedad tiene características específicas, pero todas deben poder calcular su precio de alquiler mensual y mostrar una descripción detallada.
 
 ### Requerimientos 📝
