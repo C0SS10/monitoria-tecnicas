@@ -18,8 +18,7 @@ public class Main {
         propiedades.add(new Propiedad("Amarilla", "Copacabana", 1000000));
         propiedades.add(new Propiedad("Azul", "Niquia", 600000));
 
-        // Creamos una lambda para implementar la interfaz FiltroPropiedad para color
-        // Blanca
+        // Creamos una lambda para implementar la interfaz FiltroPropiedad para color Blanca
         IFiltroPropiedad esBlanca = (p) -> p.getColor().equals("Blanca");
 
         // Mostrar y utilizar la lambda creada
