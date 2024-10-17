@@ -1,3 +1,83 @@
+# Programación Orientada a Objetos (POO) 🖥️
+
+La **Programación Orientada a Objetos (POO)** es un paradigma de programación que organiza el código en torno a **objetos**. Un objeto es una representación de un "ente" del mundo real con atributos (características) y métodos (acciones). Es una excelente forma de organizar y estructurar el código para que sea más **mantenible, reutilizable** 🛠️
+
+## 📦 Principios básicos de la POO
+
+**Abstracción** 🏗️
+
+- Una **clase** es como un plano o plantilla para crear objetos.
+- Un **objeto** es una instancia de una clase.
+
+## 🔐 Encapsulamiento
+
+El **encapsulamiento** en Java se refiere a ocultar los detalles internos de una clase y controlar el acceso a sus atributos mediante métodos públicos (getters y setters). Esto permite proteger los datos sensibles de accesos no controlados.
+
+### Como implementarlo❓
+
+```java
+class Carro {
+    // Atributos privados
+    private String marca;
+    private String modelo;
+
+    // Constructor
+    public Carro(String marca, String modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+    }
+
+    // Métodos públicos para acceder a los atributos privados (Getters)
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    // Métodos públicos para modificar los atributos privados (Setters)
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+}
+```
+
+En este ejemplo, los atributos marca y modelo están encapsulados (son privados) y solo se pueden acceder o modificar a través de los métodos **getMarca, setMarca**
+
+## 👪 Herencia
+
+La **herencia** en Java permite que una clase (clase hija) herede atributos y métodos de otra clase (clase padre). Esto permite reutilizar el código y extender las funcionalidades de las clases base.
+
+```java
+public class Factura {
+    protected double montoBase;
+
+    public abstract void mostrarDetalles();
+}
+
+class FacturaRestaurante extends Factura {
+    private String nombreEncargado;
+
+    public Deportivo(double montoBase, String nombreEncargado) {
+        super(montoBase);  // Llama al constructor de la clase padre usando super()
+        this.nombreEncargado = nombreEncargado;
+    }
+
+    // Sobrescribir el método mostrarDetalles
+    @Override
+    public void mostrarDetalles() {
+        System.out.println("El encargado de la mesa fue: " + nombreEncargado );
+    }
+}
+```
+
+En este ejemplo, la clase `FacturaRestaurante` hereda de la clase `Factura` utilizando la palabra clave **extends**. Además, se sobrescribe el método mostrarDetalles para agregar información adicional (el nombre del mesero que atendió la mesa)
+
 ## Polimorfismo 🫘
 
 El polimorfismo es un **principio** fundamental de la programación orientada a objetos que permite a los objetos de diferentes clases ser tratados de manera uniforme a través de una interfaz común. En otras palabras, el mismo método puede comportarse de manera diferente en distintos objetos.
